@@ -69,3 +69,39 @@ for k in range(5):
     ax.scatter(x2, y2, color="black")
     ax.scatter(x3, y3, color="black")
     plt.show()
+    
+    
+    
+   """
+from sklearn.cluster import KMeans
+import pandas as pd
+dataframe = pd.read_csv("iris.csv")
+import matplotlib.pyplot as plt
+
+dataframe['variety'].replace("Setosa",1,inplace= True)
+dataframe['variety'].replace("Versicolor",2,inplace = True)
+dataframe['variety'].replace("Virginica",3,inplace=True)
+
+# Описываем модель
+model = KMeans(n_clusters=3)
+
+# Проводим моделирование
+model.fit(dataframe)
+
+x = dataframe['sepalLength']
+y = dataframe['petalLength']
+# Предсказание на всем наборе данных
+spices = model.predict(dataframe)
+fig = plt.figure()
+ax = fig.add_subplot()
+ax.set_xlabel('sepalLength')
+ax.set_ylabel('petalLength')
+for j in range(len(x)):
+    if spices[j] == 1:
+        ax.scatter(x[j], y[j], color="red")
+    elif spices[j] == 0:
+        ax.scatter(x[j], y[j], color="green")
+    else:
+        ax.scatter(x[j], y[j], color="blue")
+
+plt.show()"""
